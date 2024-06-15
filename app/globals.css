@@ -2,32 +2,83 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+.image-right{
+  cursor: pointer;
+  height: 50px !important;
+
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+
+
+@keyframes expand {
+  0%,100% {
+  
+    width: 50px;
+  
+  }
+  50% {
+   
+    width: 100px;
+   
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/* Animation on hover */
+.image-right {
+  animation: expand 2s infinite ease-in-out;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@keyframes scroll {
+  0% {
+    transform: translateY(100%);
   }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 10s linear infinite;
+  cursor: pointer;
+}
+.animate-scroll:hover{
+  animation-play-state: paused;
+}
+
+
+@keyframes carousel {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-carousel {
+  display: flex;
+  animation: carousel 10s linear infinite;
+  cursor: pointer;
+}
+
+.carousel-container {
+  display: flex;
+  width: 300%; /* 3 times the width of one image */
+}
+
+.carousel-container > div {
+  width: 33.3333%; /* Each image takes up one-third of the container */
+}
+
+
+.big-images{
+  cursor: pointer;
+  transition: transform .7s ease-in-out;
+
+}
+.big-images:hover{
+  transform: scale(1.06);
+  box-shadow: rgba(255, 255, 255, 0.9) 0px 7px 29px 0px;
+
 }

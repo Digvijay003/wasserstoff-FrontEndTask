@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation';
 
 
 
-export default function Page() {
+export default function SecondPage() {
     const router=useRouter()
 
     const handleClick=()=>{

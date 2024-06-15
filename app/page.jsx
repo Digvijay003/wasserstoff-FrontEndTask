@@ -11,7 +11,7 @@ export default function Home() {
 
   useEffect(() => {
     const handleClick = () => {
-      router.push('/secondpage'); // Replace '/another-page' with your target page path
+      router.push('/secondpage'); 
     };
 
     document.addEventListener('click', handleClick);
